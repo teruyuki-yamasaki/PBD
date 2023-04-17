@@ -24,3 +24,14 @@ def fix_all_seeds(seed):
     
 fix_all_seeds(SEED)
 ```
+
+- dataframe 
+```
+train = pd.read_csv(INPUT/"train.csv")
+test = pd.read_csv(INPUT/"test.csv")
+
+print(len(set(train["image"].unique()) & set(test["image"].unique()))) # 重複数 0
+print(train["image"].nunique()) # 訓練画像数 
+print(test["image"].nunique()) # テスト画像数
+print(train["Instance ID"].max()) # Instance ID (各画像におけるannotationのID) の最大値
+```
